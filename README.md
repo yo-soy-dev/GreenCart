@@ -1,5 +1,4 @@
-# GREENCART - 🛒 Grocery Delivery Website (MERN Stack + Tailwind + Stripe)
-
+# 🛒 GreenCart — Grocery Delivery Application (MERN Stack)
 A full-stack **Grocery Delivery Web Application** built using **MongoDB, Express, React, Node.js**, styled with **Tailwind CSS**, integrated with **Stripe Payment Gateway**, and deployed online for **free**.
 
 This project includes:
