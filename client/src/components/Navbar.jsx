@@ -52,7 +52,7 @@ const Navbar = () => {
   }, [searchQuery]);
 
   return (
-    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
+    <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all z-50">
       <NavLink to="/" onClick={() => setOpen(false)}>
         <img className="h-9" src={assets.logo} alt="logo" />
       </NavLink>
@@ -65,7 +65,7 @@ const Navbar = () => {
 
         {isSeller && (
           <button
-            onClick={() => navigate("/seller-panel")}
+            onClick={() => navigate("/seller")}
             className="cursor-pointer px-6 py-2 bg-blue-600 hover:bg-blue-700 transition text-white rounded-full"
           >
             Seller Panel
@@ -113,7 +113,7 @@ const Navbar = () => {
 
               {isSeller && (
                 <li
-                  onClick={() => navigate("/seller-panel")}
+                  onClick={() => navigate("/seller")}
                   className="p-1.5 pl-3 hover:bg-primary/10 cursor-pointer"
                 >
                   Seller Panel
@@ -171,7 +171,7 @@ const Navbar = () => {
             Contact
           </NavLink>
           {isSeller && (
-            <NavLink to="/seller-panel" onClick={() => setOpen(false)}>
+            <NavLink to="/seller" onClick={() => setOpen(false)}>
               Seller Panel
             </NavLink>
           )}
