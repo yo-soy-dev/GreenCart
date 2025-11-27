@@ -3,6 +3,8 @@ import Product from "../models/Product.js";
 import stripe from "stripe";
 import User from "../models/User.js";
 
+const CLIENT_URL = process.env.VITE_CLIENT_URL;
+
 // Place Order COD : /api/order/cod
 export const placeOrderCOD = async (req, res) => {
   try {
@@ -84,13 +86,15 @@ export const placeOrderStripe = async (req, res) => {
         quantity: item.quantity,
       };
     });
-
+    
     // Create session
     const session = await stripeInstance.checkout.sessions.create({
       line_items,
       mode: "payment",
-      success_url: `${origin}/loader?next=my-orders`,
-      cancel_url: `${origin}/cart`,
+      success_url: `${CLIENT_URL}/loader?next=my-orders`,
+      cancel_url: `${CLIENT_URL}/cart`,
+      // success_url: `${origin}/loader?next=my-orders`,
+      // cancel_url: `${origin}/cart`,
       metadata: {
         orderId: order._id.toString(),
         userId,
